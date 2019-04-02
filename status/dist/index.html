@@ -1,0 +1,909 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>store.tempo</title>
+
+    <link rel="shortcut icon" type="image/png" href="http://www.tempostore.id/assets/frontend/img/favicon.png"/>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+    <script src="http://www.tempostore.id/assets/frontend/plugin/vue/vue.js"></script>
+    <script src="http://www.tempostore.id/assets/frontend/js/vuex.js"></script>
+    <script src="http://www.tempostore.id/assets/frontend/plugin/axios/axios.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="http://www.tempostore.id/assets/frontend/css/bootstrap.css"/>
+
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="http://www.tempostore.id/assets/frontend/css/slick.css"/>
+    <link type="text/css" rel="stylesheet" href="http://www.tempostore.id/assets/frontend/css/slick-theme.css"/>
+
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="http://www.tempostore.id/assets/frontend/css/nouislider.min.css"/>
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="http://www.tempostore.id/assets/frontend/css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="http://www.tempostore.id/assets/frontend/css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <!-- <link type="text/css" rel="stylesheet" href="https://microsite.tempo.co/fani/store-tempo/css/style.css"/> -->
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="http://www.tempostore.id/assets/frontend/css/menu.css"/>
+    <!-- <link type="text/css" rel="stylesheet" href="https://microsite.tempo.co/fani/store-tempo/css/menu.css"/> -->
+
+    <script src="http://www.tempostore.id/assets/frontend/js/jquery.min.js"></script>
+
+    <style media="screen">
+    [v-cloak] {
+    display: none;
+    }
+    </style>
+    </head>
+  <body>
+
+    <!-- HEADER -->
+    <header>
+      <!-- TOP HEADER -->
+      <div id="top-header" class="displaynone-mobile">
+        <div class="container">
+          <ul class="header-links pull-left">
+            <li><a href="#"><i class="fa fa-phone"></i> 021-5360409 Ext.9</a></li>
+            <li><a href="#"><i class="fa fa-envelope-o"></i>  cs@tempo.co.id</a></li>
+          </ul>
+
+                          <ul class="header-links pull-right">
+                  <li><a href="http://www.tempostore.id/profile">Welcom, Muhammad Adam Firdaus</a></li>
+                  <li><a href="http://www.tempostore.id/logout">Logout</a></li>
+                </ul>
+                  </div>
+      </div>
+      <!-- /TOP HEADER -->
+
+        <!-- Modal Register -->
+        <div class="modal fade" id="sem-reg" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="logo-login">
+                <img src="http://www.tempostore.id/assets/frontend/img/logo-login.jpg">
+              </div>
+              <div class="modal-body">
+                <div id="product-tab">
+                  <!-- form product tab nav -->
+                  <ul class="tab-nav">
+                    <li class="active"><a data-toggle="tab" href="#tab1">Register</a></li>
+                    <li><a data-toggle="tab" href="#tab2">Login</a></li>
+                  </ul>
+                  <!-- /form product tab nav -->
+                  <!-- form product tab content -->
+                  <div class="tab-content">
+                    <!-- tab1  -->
+                    <div id="tab1" class="tab-pane fade in active">
+                      <div class="row">
+                        <div class="col-md-12">
+
+
+                          <!-- modal register -->
+                          <form class="" name="myForm" onsubmit="return validateForm()" action="http://www.tempostore.id/register_pelanggan" method="post" id="reg">
+                          <div class="billing-details">
+                            <div class="form-group">
+                              <input class="input" type="text" name="nama_depan" placeholder="Full Name">
+                            </div>
+                            <div class="form-group">
+                              <input class="input" type="email" name="email" placeholder="Email or HP">
+                            </div>
+                            <div class="col-pad-btm">
+                              <label class="radio-inline">
+                                <input type="radio" name="gender" id="inlineRadio1" value="0"> Laki-Laki
+                              </label>
+                              <label class="radio-inline">
+                                <input type="radio" name="gender" id="inlineRadio1" value="1"> Perempuan
+                              </label>
+                            </div>
+                            <div class="form-group">
+                              <input class="input" type="password" name="password" placeholder="Password">
+                            </div>
+                            <label class="checkbox-inline font-term">
+                              <input type="checkbox" id="inlineCheckbox1" value="option1">I have agreed to the <a href="#"> Terms & Conditions </a> and the Tempo Store <a href="#"> Privacy Policy </a>
+                            </label>
+
+                            <div class="ma-tab">
+                              <div class="btn-login">
+                                <a href="javascript:document.getElementById('reg').submit();" class="primary-btn order-submit">Register</a>
+                              </div>
+                            </div>
+
+                          </div>
+                          </form>
+                          <!-- /modal register -->
+
+
+
+
+                          <div class="strike">
+                            <span>or register with</span>
+                          </div>
+                          <div class="center">
+                            <button class="loginBtn loginBtn--facebook">
+                              Login with Facebook
+                            </button>
+                            <button class="loginBtn loginBtn--google">
+                              Login with Google
+                            </button>
+                          </div>
+
+                        </div>
+                        <!-- /Rating -->
+                      </div>
+                    </div>
+                    <!-- /tab1  -->
+
+
+                    <!-- tab2  -->
+                    <div id="tab2" class="tab-pane fade in">
+                      <div class="row">
+                        <!-- Rating -->
+                        <div class="col-md-12">
+
+
+
+                          <!-- Login modal -->
+                          <form action="http://www.tempostore.id/login" method="post" id="text">
+                          <div class="billing-details">
+                            <div class="form-group">
+                              <input class="input" type="text" name="username" placeholder="Email/Usernamer/HP">
+                            </div>
+                            <div class="form-group">
+                              <input class="input" type="password" name="password" placeholder="Password">
+                            </div>
+                            <p class="font-red">Forgot password?</p>
+                            <div class="ma-tab">
+                              <div class="btn-login">
+                                <a href="javascript:document.getElementById('text').submit();" class="primary-btn order-submit">Login</a>
+                              </div>
+                            </div>
+                          </div>
+                          </form>
+                          <!-- /Login modal -->
+
+
+
+                            <div class="strike">
+                              <span>or login with</span>
+                            </div>
+                            <div class="center">
+                              <button class="loginBtn loginBtn--facebook">
+                                Login with Facebook
+                              </button>
+
+                              <button class="loginBtn loginBtn--google">
+                                Login with Google
+                              </button>
+                            </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /tab3  -->
+                  </div>
+                  <!-- /form product tab content  -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Register -->
+
+
+        <!-- Modal Login -->
+        <div class="modal fade" id="sem-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="logo-login">
+                <img src="http://www.tempostore.id/assets/frontend/img/logo-login.jpg">
+              </div>
+              <div class="modal-body">
+                <div id="product-tab">
+                  <!-- form product tab nav -->
+                  <ul class="tab-nav">
+                    <li class="active"><a data-toggle="tab" href="#tablog">Login</a></li>
+                    <li><a data-toggle="tab" href="#tabreg">Register</a></li>
+                  </ul>
+                  <!-- /form product tab nav -->
+                  <!-- form product tab content -->
+                  <div class="tab-content">
+                    <!-- tab1  -->
+                    <div id="tablog" class="tab-pane fade in active">
+                      <!-- row -->
+                      <div class="row">
+                        <!-- col-md-12 -->
+                        <div class="col-md-12">
+
+
+
+                          <!-- Login modal -->
+                          <form action="http://www.tempostore.id/login?rand=75" method="post" id="text">
+                          <div class="billing-details">
+                            <div class="form-group">
+                              <input class="input" type="text" name="username" placeholder="Email/Usernamer/HP">
+                            </div>
+                            <div class="form-group">
+                              <input class="input" type="password" name="password" placeholder="Password">
+                            </div>
+                            <p class="font-red">Forgot password?</p>
+                            <div class="ma-tab">
+                              <div class="btn-login">
+                                <!-- <a href="javascript:document.getElementById('text').submit();" class="primary-btn order-submit">Login</a> -->
+                                <input type="submit" value="Login" class="primary-btn order-submit" name="login" width="100">
+                              </div>
+                            </div>
+                          </div>
+                         </form>
+                          <!-- Login modal -->
+
+
+
+
+                            <div class="strike">
+                              <span>or login with</span>
+                            </div>
+                            <div class="center">
+                              <button class="loginBtn loginBtn--facebook">
+                                Login with Facebook
+                              </button>
+
+                              <button class="loginBtn loginBtn--google">
+                                Login with Google
+                              </button>
+                            </div>
+
+                        </div>
+                        <!-- col-md-12 -->
+                      </div>
+                      <!-- row -->
+                    </div>
+                    <!-- /tab1  -->
+
+                    <!-- tab2  -->
+                    <div id="tabreg" class="tab-pane fade in">
+                      <!-- row -->
+                      <div class="row">
+                        <!-- /col-md-12 -->
+                        <div class="col-md-12">
+
+
+                          <!-- Register Modal -->
+                          <form class="" name="myForm" onsubmit="return validateForm()" action="http://www.tempostore.id/register_pelanggan" method="post" id="reg">
+                          <div class="billing-details">
+                            <div class="form-group">
+                              <input class="input" type="text" id="name" name="nama_depan" placeholder="Full Name">
+                            </div>
+                            <div class="form-group">
+                              <input class="input" type="email" id="email" name="email" placeholder="Email or HP">
+                            </div>
+                            <div class="col-pad-btm">
+                              <label class="radio-inline">
+                                <input type="radio" name="gender" id="inlineRadio1" value="0"> Laki-Laki
+                              </label>
+                              <label class="radio-inline">
+                                <input type="radio" name="gender" id="inlineRadio1" value="1"> Perempuan
+                              </label>
+                            </div>
+                            <div class="form-group">
+                              <input class="input" type="password" id="password" name="password" placeholder="Password">
+                            </div>
+                            <label class="checkbox-inline font-term">
+                              <input type="checkbox" id="check" value="check">I have agreed to the <a href="#"> Terms & Conditions </a> and the Tempo Store <a href="#"> Privacy Policy </a>
+                            </label>
+
+                            <div class="ma-tab">
+                              <div class="btn-login">
+                                <a href="javascript:document.getElementById('reg').submit();" class="primary-btn order-submit">Register</a>
+                              </div>
+                            </div>
+
+                          </div>
+                          </form>
+                          <!-- Register Modal -->
+
+
+
+
+                          <div class="strike">
+                            <span>or register with</span>
+                          </div>
+                          <div class="center">
+                            <button class="loginBtn loginBtn--facebook">
+                              Login with Facebook
+                            </button>
+                            <button class="loginBtn loginBtn--google">
+                              Login with Google
+                            </button>
+                          </div>
+
+                        </div>
+                        <!-- /col-md-12 -->
+                      </div>
+                      <!-- row -->
+                    </div>
+                    <!-- /tab3  -->
+                  </div>
+                  <!-- /form product tab content  -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Login -->
+
+
+      <!-- MAIN HEADER -->
+      <div id="header">
+        <!-- container -->
+        <div class="container">
+          <!-- row -->
+          <div class="row">
+            <!-- LOGO -->
+            <div class="col-md-2">
+              <div class="header-logo">
+                <a href="http://www.tempostore.id" class="logo displaynone-mobile">
+                  <img src="http://www.tempostore.id/assets/frontend/img/logo.png" alt="">
+                </a>
+                <a href="http://www.tempostore.id" class="logo displaynone-desktop">
+                  <img src="http://www.tempostore.id/assets/frontend/img/logo-mobile.png" alt="">
+                </a>
+              </div>
+            </div>
+            <!-- /LOGO -->
+
+            <!-- MENU BAR -->
+            <div class="col-md-2">
+              <nav id="navigation1" class="navigation">
+                <!-- Logo Area Start -->
+                <div class="nav-header">
+                  <div class="nav-toggle"></div>
+                </div>
+                <!-- Main Menus Wrapper -->
+                <div class="nav-menus-wrapper">
+                  <ul class="nav-menu align-to-right">
+                    <li><a href="#">Category</a>
+                      <ul class="nav-dropdown">
+                          <li><a href="http://www.tempostore.id/mediacetak">Media Cetak</a>
+                                  <ul class="nav-dropdown coltwo">
+                                    <li><a href="http://www.tempostore.id/mediacetak/koran_tempo" target="_blank">Koran TEMPO</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_tempo" target="_blank">Majalah TEMPO</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/tempo_english_weekly_magazine" target="_blank">Tempo English Weekly Magazine</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_u" target="_blank">Majalah U</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_komunika_ut" target="_blank">Majalah Komunika UT</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_fokus_bi" target="_blank">Majalah Fokus BI</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_hog" target="_blank">Majalah HOG</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_travellounge" target="_blank">Majalah Travellounge</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_tempo_archive" target="_blank">Majalah TEMPO Archive</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_aha_aku_tahu" target="_blank">Majalah AHA Aku Tahu</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_tempo_edisi_khusus" target="_blank">Majalah TEMPO Edisi Khusus</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/tempo_english_special_edition" target="_blank">TEMPO English Special Edition</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_aha_aku_tahu_baru" target="_blank">Majalah AHA Aku Tahu Baru</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_tempo_2014" target="_blank">Majalah TEMPO 2014</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_tempo_english_2014" target="_blank">Majalah TEMPO English 2014</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/tempo_special_edition_2015" target="_blank">TEMPO Special Edition 2015</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/tabloid_bintang_indonesia" target="_blank">Tabloid Bintang Indonesia</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/tabloid_bintang_home" target="_blank">Tabloid Bintang Home</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_home_living" target="_blank">Majalah Home Living</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_tempo_edsus_2016" target="_blank">Majalah TEMPO Edsus 2016</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_tempo_2016" target="_blank">Majalah TEMPO 2016</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/tabloid_bintang_indonesia_edsus" target="_blank">Tabloid Bintang Indonesia Edsus</a></li>
+                                    <li><a href="http://www.tempostore.id/mediacetak/majalah_home_living_edsus" target="_blank">Majalah Home Living Edsus</a></li>
+                                  </ul>
+                                </li>
+                                                          <li><a href="http://www.tempostore.id/buku">Buku</a>
+                                  <ul class="nav-dropdown coltwo">
+                                                                               <li><a href="http://www.tempostore.id/buku/referensi" target="_blank">Referensi</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/general_collection" target="_blank">General Collection</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/gc_caping_6_dan_7" target="_blank">GC Caping 6 dan 7</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/gc_caping_8" target="_blank">GC Caping 8</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/bapak_bangsa_kpg" target="_blank">Bapak Bangsa KPG</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/inovasi_17_bank" target="_blank">Inovasi 17 Bank</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/perti_2011" target="_blank">Perti 2011</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/perti_2012" target="_blank">Perti 2012</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/perti_2013" target="_blank">Perti 2013</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/perti_mm_s2" target="_blank">Perti MM S2</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/seandainya_saya_wartawan_tempo" target="_blank">Seandainya Saya Wartawan TEMPO</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/buku_gm_grafiti_pers" target="_blank">Buku GM Grafiti Pers</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/transformasi_bumn" target="_blank">Transformasi BUMN</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/wars_within_janet" target="_blank">Wars Within Janet</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/sharp_times" target="_blank">Sharp Times</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/buku_dari_pemimpin_dan_untuk_pemimpin" target="_blank">Buku Dari Pemimpin Dan Untuk Pemimpin</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/buku_wisata" target="_blank">Buku Wisata</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/caping_1-5" target="_blank">Caping 1-5</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/agama" target="_blank">Agama</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/anak_dan_remaja" target="_blank">Anak dan Remaja</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/arsitektur" target="_blank">Arsitektur</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/bahasa_asing" target="_blank">Bahasa Asing</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/bahasa" target="_blank">Bahasa</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/biografi_dan_otobiografi" target="_blank">Biografi dan Otobiografi</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/ekonomi_dan_bisnis" target="_blank">Ekonomi dan Bisnis</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/fiksi" target="_blank">Fiksi</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/filsafat" target="_blank">Filsafat</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/hobi" target="_blank">Hobi</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/hukum,_sosial,_politik" target="_blank">Hukum, Sosial, Politik</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/keluarga" target="_blank">Keluarga</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/kesehatan" target="_blank">Kesehatan</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/komik" target="_blank">Komik</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/komputer" target="_blank">Komputer</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/masakan" target="_blank">Masakan</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/matematika_dan_sains" target="_blank">Matematika dan Sains</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/musik" target="_blank">Musik</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/pendidikan" target="_blank">Pendidikan</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/psikologi" target="_blank">Psikologi</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/sejarah" target="_blank">Sejarah</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/self-help" target="_blank">Self-Help</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/seni" target="_blank">Seni</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/teknologi_dan_rekayasa" target="_blank">Teknologi dan Rekayasa</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/wisata" target="_blank">Wisata</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/esai" target="_blank">Esai</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/kecantikan" target="_blank">Kecantikan</a></li>
+                                                                               <li><a href="http://www.tempostore.id/buku/olahraga" target="_blank">Olahraga</a></li>
+                                                                       </ul>
+                                </li>
+                                                          <li><a href="http://www.tempostore.id/riset">Riset</a>
+                                  <ul class="nav-dropdown coltwo">
+                                                            <li><a href="http://www.tempostore.id/riset/politik" target="_blank">Politik</a></li>
+                                                            <li><a href="http://www.tempostore.id/riset/ekonomi" target="_blank">Ekonomi</a></li>
+                                                            <li><a href="http://www.tempostore.id/riset/hukum" target="_blank">Hukum</a></li>
+                                                            <li><a href="http://www.tempostore.id/riset/artikel_pilihan" target="_blank">Artikel Pilihan</a></li>
+                                                            <li><a href="http://www.tempostore.id/riset/sosial_budaya" target="_blank">Sosial Budaya</a></li>
+                                                            <li><a href="http://www.tempostore.id/riset/paket_perundangan" target="_blank">Paket Perundangan</a></li>
+                                                            <li><a href="http://www.tempostore.id/riset/tempo_fresh" target="_blank">TEMPO Fresh</a></li>
+                                                            <li><a href="http://www.tempostore.id/riset/tempo_perspektif" target="_blank">TEMPO Perspektif</a></li>
+                                                            <li><a href="http://www.tempostore.id/riset/tempo_investigasi" target="_blank">TEMPO Investigasi</a></li>
+                                                            <li><a href="http://www.tempostore.id/riset/laporan_khusus" target="_blank">Laporan Khusus</a></li>
+                                                    </ul>
+                                </li>
+                          
+
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Search panel Start -->
+                <div class="nav-search displaynone-desktop">
+                  <div class="nav-search-button">
+                    <i class="nav-search-icon"></i>
+                  </div>
+
+
+                  <!-- search -->
+                  <form action="http://www.tempostore.id/search" method="post" id="cari">
+                    <div class="nav-search-inner">
+                      <input type="search" name="search" placeholder="Type Your Keywords">
+                    </div>
+
+                    <div class="login-mobile">
+                      <a href="javascript:document.getElementById('cari').submit();" data-toggle="modal" data-target="#sem-login">
+                         <i class="fa fa-user" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </form>
+                </div>
+              </nav>
+
+            </div>
+            <!-- /MENU BAR -->
+
+            <!-- SEARCH BAR -->
+            <div class="col-md-7">
+                <div class="header-search displaynone-mobile">
+                  <form action="http://www.tempostore.id/search" method="post" id="cari">
+                    <input type="search" name="search" class="input" placeholder="Search here">
+                    <button href="javascript:document.getElementById('cari').submit();" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                  </form>
+                </div>
+            </div>
+            <!-- /SEARCH BAR -->
+
+            <!-- ACCOUNT -->
+            <div class="col-md-1 clearfix">
+              <div class="header-ctn">
+
+                <!-- Cart -->
+                
+<div class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+    <i class="fa fa-shopping-cart"></i>
+    <div class="qty">1</div>
+  </a>
+  <div class="cart-dropdown">
+    <div class="cart-list">
+
+
+                <form class="" action="" method="post">
+        <div class="product-widget">
+            <div class="product-img">
+                <img src="http://www.tempostore.id/image?q=perang-bubat-di-tanah-jawa.jpg&date=2019-02-23&size=medium&kanal=media_cetak&f=cover" alt="">
+            </div>
+            <div class="product-body">
+                <small>Media Cetak : </small>
+                <h3 class="product-name"><a href="http://www.tempostore.id/media_cetak/10136/perang-bubat-di-tanah-jawa">Perang Bubat di Tanah Jawa</a></h3>
+                <h4 class="product-price">
+
+                    
+                            <span class="qty">
+                            1 x
+                            </span>
+                            45,000(hard copy)
+                                        </div>
+            <input type="hidden" name="id" value="10136">
+            <button class="delete" type="submit" name="btn" value="deleted"><i class="fa fa-close"></i></button>
+        </div>
+        <hr>
+        </form>
+        
+
+    </div>
+    <div class="cart-summary">
+      <small>1 Item(s) selected</small>
+      <h5>SUBTOTAL: Rp 45,000</h5>
+    </div>
+    <div class="cart-btns">
+      <a href="#">View Cart</a>
+      <a href="http://www.tempostore.id/checkout">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+    </div>
+  </div>
+</div>
+                <!-- /Cart -->
+
+              </div>
+            </div>
+            <!-- /ACCOUNT -->
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- /MAIN HEADER -->
+    </header>
+    <!-- /HEADER -->
+
+
+    <script>
+      window.onscroll = function() {myFunction()};
+
+      var header = document.getElementById("header");
+      var sticky = header.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset > sticky) {
+          header.classList.add("sticky");
+        } else {
+          header.classList.remove("sticky");
+        }
+      }
+    </script>
+
+<div class="section">
+	<!-- container -->
+	<div class="container">
+		<!-- row -->
+		<div class="row">
+
+			<div class="col-md-12">
+				<!-- order summary -->
+				<div class="order-summary center">
+					<h3>Pembelian Berhasil</h3>
+											<h5>Untuk pembayaran silahkan periksa email anda.</h5>
+									</div>
+				<!-- order summary -->
+			</div>
+		</div>
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>
+
+<div class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="invoice-title">
+					<h3>Order Number #T1554196576</h3>
+					<p>Order placed on 2019-04-02 16:16:16</p>
+					<hr>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section">
+	<div class="container">
+				<div class="row">
+			<div class="col-xs-6">
+				<address>
+					<strong>Billed To:</strong><br>
+					Muhammad Adam Firdaus<br>
+					Jl. Palmerah Barat 8 <br>
+					Jakarta Barat <br>
+					11480 <br>
+					082115002225 , xbn.adam@gmail.com <br>
+				</address>
+			</div>
+			<div class="col-xs-6 text-right">
+				<address>
+					<strong>Shipped To:</strong><br>
+					Muhammad Adam Firdaus<br>
+					Jl. Palmerah Barat 8 <br>
+					Jakarta Barat <br>
+					11480 <br>
+					082115002225 , xbn.adam@gmail.com <br>
+				</address>
+			</div>
+		</div>
+	<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table table-condensed">
+						<thead>
+							<tr>
+								<td><strong>Product</strong></td>
+								<td class="text-center"><strong>Price</strong></td>
+								<td class="text-center"><strong>Quantity</strong></td>
+								<td class="text-center"><strong>Onkir</strong></td>
+								<td class="text-center"><strong>Total</strong></td>
+							</tr>
+						</thead>
+						<tbody>
+															<tr>
+									<td class="col-md-5">
+										<div class="media">
+											<a class="image-inv" href="#">
+												<img class="media-object" src="http://www.tempostore.id/image?q=perang-bubat-di-tanah-jawa.jpg&date=2019-02-23&size=medium&kanal=media_cetak&f=cover" style="width:auto; height: 100px;">
+											</a>
+												Transaksi Diterima : <br> 2019-04-02 16:16:17											<div class="media-body">
+												<h5 class="media-heading"> </h5>
+											</div>
+										</div>
+									</td>
+									<td class="text-center">Rp. 45,000</td>
+									<td class="text-center">1</td>
+									<td class="text-center">
+										Rp. 9,000 | Paket Kilat Khusus								 </td>
+									<td class="text-center">Rp.54,000</td>
+								</tr>
+													</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<br>
+		<h4 class="text-center">Order Summary</h4>
+		<br>
+		<hr>
+		<br>
+		<div class="pull-left"><h5>Subtotal</h5> </div>
+		<div class="pull-right"><h5 class="text-right">Rp. 45,000</h5></div>
+		<div class="clearfix"></div>
+		<div class="pull-left"><h5>Shipping</h5> </div>
+					<div class="pull-right"><h5 class="text-right">Rp. 9,000 </h5></div>
+				<div class="clearfix"></div>
+		<hr>
+		<div class="pull-left"><h5>Order Total</h5> </div>
+		<div class="pull-right"><h5 class="text-right">Rp. 54,000</h5></div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<div class="row order-status">
+  <br>
+  <h4 class="text-center">Status</h4>
+  <br>
+  <hr>
+  <br>
+  <div class="wrapper">
+    <div class="col status">
+      <li class="blue">
+        <a href="#">Buyer</a>
+      </li>
+      <li class="blue">
+        <a href="#">Buyer</a>
+      </li>
+      <li class="green">
+        <a href="#">Seller</a>
+      </li>
+      <li class="orange">
+        <a href="#">System Tracker</a>
+      </li>
+      <li class="blue">
+        <a href="#">Buyer</a>
+      </li>
+    </div>
+    <div class="col description">
+      <li>
+        <p>
+          Check out order. Menunggu konfirmasi pembayaran.
+        </p>
+      </li>
+      <li>
+        <p>
+          Pembayaran sudah dikonfirmasi.
+        </p>
+      </li>
+      <li>
+        <p>
+          Pesanan sedang diproses.
+        </p>
+      </li>
+      <li>
+        <p>
+          Pesanan telah dikirim dengan nomor resi XXXXXX.
+        </p>
+      </li>
+      <li>
+        <p>
+          Barang telah diterima.
+        </p>
+      </li>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <!-- top footer -->
+  <div class="section">
+    <!-- container -->
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <div class="col-md-2 col-sm-6 col-xs-6">
+          <div class="footer">
+            <h4 class="footer-title">Information</h4>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Orders and Returns</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-2 col-sm-6 col-xs-6">
+          <div class="footer">
+            <h4 class="footer-title">Legal</h4>
+            <ul class="footer-links">
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Intellectual Property</a></li>
+              <li><a href="#">Kontributor</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="footer">
+            <h4 class="footer-title">Help</h4>
+            <ul class="footer-links">
+              <li><a href="#">How To Buy</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="footer">
+            <div class="newsletter">
+              <p>Sign Up for the <strong>NEWSLETTER</strong></p>
+              <form>
+                <input class="input" type="email" placeholder="Enter Your Email">
+                <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+              </form>
+              <ul class="newsletter-follow">
+                <li>
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-pinterest"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /row -->
+
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6">
+          <div class="footer">
+            <h4 class="footer-title">PAYMENT METHOD</h4>
+              <img class="img-responsive" src="http://www.tempostore.id/assets/frontend/img/pembayaran.jpg">
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+          <div class="footer">
+            <h4 class="footer-title">SERVICE DELIVERY</h4>
+            <img class="img-responsive" src="http://www.tempostore.id/assets/frontend/img/pengiriman.jpg">
+          </div>
+        </div>
+      </div>
+      <!-- /row -->
+
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /top footer -->
+
+  <!-- bottom footer -->
+  <div id="bottom-footer" class="section">
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <span class="copyright">
+            Copyright &copy; store.tempo.co All rights reserved.</a>
+          </span>
+        </div>
+      </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /bottom footer -->
+</footer>
+<!-- /FOOTER -->
+
+
+<!-- jQuery Plugins -->
+<script src="http://www.tempostore.id/assets/frontend/js/bootstrap.min.js"></script>
+<script src="http://www.tempostore.id/assets/frontend/js/slick.min.js"></script>
+<script src="http://www.tempostore.id/assets/frontend/js/nouislider.min.js"></script>
+<script src="http://www.tempostore.id/assets/frontend/js/jquery.zoom.min.js"></script>
+<script src="http://www.tempostore.id/assets/frontend/js/main.js"></script>
+<script src="http://www.tempostore.id/assets/frontend/js/menu.js"></script>
+<script src="http://www.tempostore.id/assets/frontend/js/moment.min.js"></script>
+
+<!-- </div> -->
+<!-- end vue -->
+
+<script type="text/javascript">
+	$( ".fresh" ).click(function() {
+		setTimeout(function() {
+		    location.reload();
+		}, 5000);
+	});
+</script>
+
+</body>
+</html>
